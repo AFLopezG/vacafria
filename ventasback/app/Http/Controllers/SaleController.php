@@ -191,7 +191,7 @@ class SaleController extends Controller
                 $conn->query("UPDATE cliente SET saldo=saldo-".$request->total." where codigo='".$ctarjeta."'");
                 $conn->query("INSERT INTO historial SET
                 fecha='".date("Y-m-d")."',
-                lugar='CAFE ITALIA',
+                lugar='VACA FRIA',
                 monto='".$request->total."',
                 numero='".$sale->id."',
                 cliente_id='".$row["id"]."'

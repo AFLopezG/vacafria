@@ -2,7 +2,7 @@
   <q-page class="flex flex-center">
     <img
       alt="Quasar logo"
-      src="~assets/cafeitalia.png"
+      src="~assets/vacafria.png"
       style="width:20%; height:20%"
     >
   </q-page>

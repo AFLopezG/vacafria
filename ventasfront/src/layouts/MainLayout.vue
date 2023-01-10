@@ -15,7 +15,7 @@
           {{$store.state.user.name}}
         </q-toolbar-title>
 
-        <div>CAFE ITALIA &nbsp;&nbsp;</div><br>
+        <div>VACA FRIA &nbsp;&nbsp;</div><br>
         <q-btn @click="logout" v-if="$store.getters.isLoggedIn" label="salir" color="red" />
       </q-toolbar>
     </q-header>
@@ -166,9 +166,9 @@
           </q-item-section>
 
           <q-item-section>
-            <q-item-label>Venta Cafe Italia</q-item-label>
+            <q-item-label>Venta Vaca Fria</q-item-label>
             <q-item-label caption>
-              Ventas sabor peru
+              Ventas 
             </q-item-label>
           </q-item-section>
         </q-item>
