@@ -313,7 +313,7 @@ class SaleController extends Controller
             hr{border: 1px dashed ;}</style>
             <div class="textoimp margen">
             <span style="font-size:medium">'.$sale->dosage->empresa->nombre.'</span><br>
-            <span>CASA MATRIZ</span><br>
+            <span>BISTROFOOD S.R.L.<br>SUCURSAL No 2</span><br>
             <span>'.$sale->dosage->empresa->direccion.'</span><br>
             <span>Tel: '.$sale->dosage->empresa->telefono.'</span><br>
             <span>ORURO - BOLIVIA</span><br>
@@ -529,7 +529,7 @@ class SaleController extends Controller
         ->join('sales','sales.id','=','details.sale_id')
         ->where('sales.user_id',$id)
         ->whereDate('sales.fecha','>=',$fecha1)->whereDate('sales.fecha','<=',$fecha2)
-        
+
         ->where('sales.estado','ACTIVO')
         ->where('sales.tarjeta','NO')
         ->groupBy('details.credito')
@@ -899,7 +899,7 @@ class SaleController extends Controller
         $detalle2=DB::table('details')
         ->select('details.credito',DB::raw('SUM(subtotal) as total'))
         ->join('sales','sales.id','=','details.sale_id')
-        ->whereDate('sales.fecha','>=',$fecha1)->whereDate('sales.fecha','<=',$fecha2)        
+        ->whereDate('sales.fecha','>=',$fecha1)->whereDate('sales.fecha','<=',$fecha2)
         ->where('sales.estado','ACTIVO')
         ->where('sales.tarjeta','NO')
         ->groupBy('details.credito')
@@ -992,7 +992,7 @@ class SaleController extends Controller
         $detalle2=DB::table('details')
         ->select('details.credito',DB::raw('SUM(subtotal) as total'))
         ->join('sales','sales.id','=','details.sale_id')
-        ->whereDate('sales.fecha','>=',$fecha1)->whereDate('sales.fecha','<=',$fecha2)        
+        ->whereDate('sales.fecha','>=',$fecha1)->whereDate('sales.fecha','<=',$fecha2)
         ->where('sales.estado','ACTIVO')
         ->where('sales.tipo','R')
         ->where('sales.tarjeta','NO')
@@ -1085,7 +1085,7 @@ class SaleController extends Controller
         $detalle2=DB::table('details')
         ->select('details.credito',DB::raw('SUM(subtotal) as total'))
         ->join('sales','sales.id','=','details.sale_id')
-        ->whereDate('sales.fecha','>=',$fecha1)->whereDate('sales.fecha','<=',$fecha2)        
+        ->whereDate('sales.fecha','>=',$fecha1)->whereDate('sales.fecha','<=',$fecha2)
         ->where('sales.estado','ACTIVO')
         ->where('sales.tipo','F')
         ->where('sales.tarjeta','NO')
