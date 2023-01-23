@@ -24,7 +24,7 @@ class CreateSalesTable extends Migration
               $table->boolean("cobrar")->default(false);
             
               $table->string("estado")->default('ACTIVO');
-              $table->string("nrocomprobante");
+              $table->integer("nrocomprobante")->nullable();
             $table->double("monto",11,2);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

@@ -40,6 +40,13 @@
               lazy-rules
               :rules="[ val => val>0 && val < 5000 || 'Por favor Valor']"
             />
+            <q-input
+            filled
+            v-model="dato.medida"
+            label="Medida (gr)"
+            type="number"
+            
+          />
             <q-select
               v-model="dato.rubro_id"
               label="Rubro"
@@ -119,6 +126,9 @@
           <q-td key="precio" :props="props">
             {{ props.row.precio }}
           </q-td>
+          <q-td key="medida" :props="props">
+            {{ props.row.medida }}
+          </q-td>
           <q-td key="rubro" :props="props">
             <div class="text-h6">{{ props.row.rubro.nombre }}</div>
           </q-td>
@@ -191,10 +201,16 @@
               v-model="dato2.cantidad"
               label="Cantidad"
               type="number"
-              hint="Cantidad de platos"
+              hint="Cantidad"
               lazy-rules
               :rules="[ val => val>0 && val < 5000 || 'Por favor Valor']"
             />
+            <q-input
+            filled
+            v-model="dato2.medida"
+            label="Medida (gr)"
+            type="number"
+          />
             <q-select
               v-model="dato2.rubro_id"
               label="Rubro"
@@ -442,6 +458,7 @@ export default {
         { name: 'imagen', align: 'center', label: 'Imagen', field: 'color', sortable: true },
         { name: 'cantidad', align: 'right', label: 'Stock', field: 'cantidad', sortable: true },
         { name: 'precio', align: 'right', label: 'Precio', field: 'precio', sortable: true },
+        { name: 'medida', align: 'right', label: 'medida', field: 'medida', sortable: true },
         { name: 'rubro', align: 'center', label: 'Rubro', field: 'rubro', sortable: true },
         { name: 'activo', align: 'center', label: 'Activo', field: 'activo' },
         { name: 'opcion', label: 'Opcion', field:'action',  sortable: false },
@@ -688,6 +705,7 @@ onSub(){
     onReset () {
       this.dato.nombre = null;
       this.dato.precio = 0.00;
+      this.dato.medida = 0;
       this.dato.rubro_id=1;
       this.dato.color = null;
       this.dato.imagen=null;

@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('color')->default('');
             $table->string('descripcion')->default('');
             $table->integer('cantidad')->default(0);
+            $table->integer('medida')->default(0);
             $table->boolean('activo')->default(true);
             $table->unsignedBigInteger('rubro_id');
             $table->foreign('rubro_id')->references('id')->on('rubros');
